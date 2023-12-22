@@ -1,7 +1,7 @@
 package core;
 
 public interface Flag<F> {
-    F isDeleted();
+    Boolean isDeleted();
     F updateFlag(F updateFlag);
     Class<F> getFlagType();
 }

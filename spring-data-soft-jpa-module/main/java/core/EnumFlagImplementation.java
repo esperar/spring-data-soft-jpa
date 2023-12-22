@@ -14,7 +14,7 @@ public class EnumFlagImplementation implements Flag<FlagType> {
 
 
     @Override
-    public FlagType isDeleted() {
+    public Boolean isDeleted() {
         return null;
     }
 
