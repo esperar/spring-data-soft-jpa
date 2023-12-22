@@ -23,6 +23,7 @@ public class SoftFlagEntity<F extends Flag> {
         } else {
             throw new IllegalArgumentException("Flag's type is not matched");
         }
+
     }
 
     public static <F extends Flag> SoftFlagEntity<F> createSoftFlagEntity(F flag) {

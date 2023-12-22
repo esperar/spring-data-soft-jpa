@@ -37,6 +37,4 @@ public class BooleanFlagImplementation implements Flag<Boolean> {
         return Boolean.class;
     }
 
-
-
 }
