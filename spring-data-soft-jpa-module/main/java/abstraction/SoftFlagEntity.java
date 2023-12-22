@@ -10,7 +10,7 @@ public class SoftFlagEntity<F extends Flag> {
      * there is a flag field
      * this field's type must be instanced of Flag
      */
-    private final F flag;
+    private F flag;
 
     public SoftFlagEntity(F flag) {
 
@@ -31,5 +31,9 @@ public class SoftFlagEntity<F extends Flag> {
 
     public F getFlag() {
         return flag;
+    }
+
+    public void setFlag(F flag) {
+        this.flag = flag;
     }
 }

@@ -1,7 +1,8 @@
 package core;
 
-public class EnumFlagImplementation implements Flag<FlagType> {
+import abstraction.SoftFlagEntity;
 
+public class EnumFlagImplementation implements Flag<FlagType> {
 
     /**
      * EnumFlagImplementation Class
@@ -12,15 +13,24 @@ public class EnumFlagImplementation implements Flag<FlagType> {
 
     // TODO Dependency Injection to AbstractionFlagEntity and implements methods by using AbstractionFlagEntity
 
+    private final SoftFlagEntity<EnumFlagImplementation> entity;
+    private final FlagType flagStatus;
+
+    public EnumFlagImplementation(SoftFlagEntity<EnumFlagImplementation> entity, FlagType flagStatus) {
+        this.entity = entity;
+        this.flagStatus = flagStatus;
+    }
+
 
     @Override
     public Boolean isDeleted() {
-        return null;
+        return entity.getFlag().flagStatus == FlagType.DELETED;
     }
 
     @Override
     public FlagType updateFlag(FlagType updateFlag) {
-        return null;
+        entity.setFlag(new EnumFlagImplementation(entity, updateFlag));
+        return updateFlag;
     }
 
     @Override
